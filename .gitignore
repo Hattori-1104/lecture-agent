@@ -1,0 +1,6 @@
+dashboard/node_modules/
+dashboard/dist/
+dashboard/.astro/
+__pycache__/
+*.pyc
+.claude/settings.local.json

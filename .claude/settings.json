@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 scripts/remind_save.py",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}

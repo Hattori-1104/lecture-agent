@@ -1,0 +1,23 @@
+---
+interface Props {
+  value: number; // 0–100
+  label?: string;
+}
+const { value, label } = Astro.props;
+const clamped = Math.max(0, Math.min(100, value));
+const color =
+  clamped >= 80 ? 'bg-emerald-500' :
+  clamped >= 60 ? 'bg-blue-500' :
+  clamped >= 40 ? 'bg-yellow-500' : 'bg-red-500';
+---
+
+<div class="w-full">
+  {label && <span class="text-xs text-gray-400 mb-1 block">{label}</span>}
+  <div class="w-full bg-gray-700 rounded-full h-2.5">
+    <div
+      class={`h-2.5 rounded-full transition-all ${color}`}
+      style={`width: ${clamped}%`}
+    ></div>
+  </div>
+  <span class="text-xs text-gray-400 mt-1 block text-right">{clamped}%</span>
+</div>
