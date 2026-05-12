@@ -1,10 +1,39 @@
 {
   "version": "1.0",
-  "lastUpdated": null,
-  "topics": {},
+  "lastUpdated": "2026-05-12T08:46:23Z",
+  "topics": {
+    "微積分/論理・命題": {
+      "understanding": 70,
+      "attempts": 2,
+      "correct": 1,
+      "weakPoints": ["命題の否定で量化子の反転を忘れる"],
+      "lastPracticed": "2026-05-12"
+    },
+    "微積分/ε-N論法": {
+      "understanding": 60,
+      "attempts": 1,
+      "correct": 0,
+      "weakPoints": ["n≥N（N以降）の条件を抜かしやすい"],
+      "lastPracticed": "2026-05-12"
+    },
+    "微積分/微分・極値": {
+      "understanding": 80,
+      "attempts": 2,
+      "correct": 2,
+      "weakPoints": ["第2次導関数判定の符号と極大・極小の対応を混同しやすい"],
+      "lastPracticed": "2026-05-12"
+    },
+    "微積分/写像": {
+      "understanding": 75,
+      "attempts": 3,
+      "correct": 3,
+      "weakPoints": ["単射・全射の証明を定義に沿って記述する習慣"],
+      "lastPracticed": "2026-05-12"
+    }
+  },
   "overallStats": {
-    "totalSessions": 0,
-    "totalProblems": 0,
-    "totalCorrect": 0
+    "totalSessions": 1,
+    "totalProblems": 8,
+    "totalCorrect": 6
   }
 }
