@@ -1,6 +1,6 @@
 ---
 description: このセッションの学習内容を分析してJSONに記録し、GitHubにpushする
-allowed-tools: Write, Edit, Bash, Read
+allowed-tools: Bash
 ---
 
 このセッションの会話全体を振り返り、以下の手順で学習記録を保存してください。
@@ -16,37 +16,30 @@ allowed-tools: Write, Edit, Bash, Read
 - **苦手点**: 具体的に詰まっていた概念や計算ステップ
 - **要約**: 日本語で 2〜3 文
 
-## ステップ 2: セッションファイルを作成する
+## ステップ 2: スクリプトでファイルを保存する
 
-現在時刻を `YYYY-MM-DDTHHMMSS` 形式にして `data/sessions/` 以下に保存してください。
+分析結果を以下の JSON 形式にまとめ、バイナリに渡してください。
+`topicUnderstandings` は各トピックの理解度（0〜100）をトピック名をキーにして指定します。
 
-ファイル内容:
-```json
+```bash
+scripts/save_progress/target/release/save_progress << 'EOF'
 {
-  "id": "<セッションの識別子（タイムスタンプで可）>",
-  "date": "<ISO 8601 形式の現在時刻>",
   "topicsCovered": ["<トピック1>", "<トピック2>"],
   "problemsAttempted": 0,
   "problemsCorrect": 0,
   "summary": "<要約>",
-  "weakPointsIdentified": ["<苦手点1>", "<苦手点2>"]
+  "weakPointsIdentified": ["<苦手点1>", "<苦手点2>"],
+  "topicUnderstandings": {
+    "<トピック1>": 70,
+    "<トピック2>": 65
+  }
 }
+EOF
 ```
 
-## ステップ 3: progress.json を更新する
+このコマンドを実際の分析結果で埋めて実行すると、セッションファイルの作成と progress.json の更新が自動で行われます。
 
-`data/progress.json` を Read で読み込み、以下のルールで更新してください:
-
-- **topics**: 各トピックを更新・追加する
-  - 初回: `{ understanding, attempts: 0, correct: 0, weakPoints: [], lastPracticed }`
-  - 2回目以降の理解度: `new = round(prev * 0.6 + current * 0.4)` （直近セッション重み付け平均）
-  - `weakPoints`: 既存リストと新しいリストを union（重複除去）
-  - `attempts` / `correct` は累積加算
-  - `lastPracticed`: 今日の日付
-- **overallStats**: `totalSessions +1`、`totalProblems` と `totalCorrect` を加算
-- **lastUpdated**: 現在の ISO 8601 時刻
-
-## ステップ 4: git add → commit → push
+## ステップ 3: git add → commit → push
 
 ```bash
 git -C /home/hattori/repositories/lecture-agent add data/

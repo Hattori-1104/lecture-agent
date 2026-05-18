@@ -1,6 +1,8 @@
 dashboard/node_modules/
 dashboard/dist/
 dashboard/.astro/
+scripts/save_progress/target/
 __pycache__/
 *.pyc
 .claude/settings.local.json
+draft.txt
