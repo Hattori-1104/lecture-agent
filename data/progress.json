@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-05-12T08:46:23Z",
+  "lastUpdated": "2026-05-18T05:13:16Z",
   "topics": {
     "微積分/論理・命題": {
       "understanding": 70,
@@ -23,17 +23,35 @@
       "weakPoints": ["第2次導関数判定の符号と極大・極小の対応を混同しやすい"],
       "lastPracticed": "2026-05-12"
     },
+    "微積分/実数の連続性": {
+      "understanding": 55,
+      "attempts": 0,
+      "correct": 0,
+      "weakPoints": ["上界と上限を混同しやすい"],
+      "lastPracticed": "2026-05-18"
+    },
     "微積分/写像": {
-      "understanding": 75,
-      "attempts": 3,
-      "correct": 3,
-      "weakPoints": ["単射・全射の証明を定義に沿って記述する習慣"],
-      "lastPracticed": "2026-05-12"
+      "understanding": 71,
+      "attempts": 7,
+      "correct": 5,
+      "weakPoints": [
+        "単射・全射の証明を定義に沿って記述する習慣",
+        "証明での計算ステップの省略",
+        "逆像の概念の直感的理解"
+      ],
+      "lastPracticed": "2026-05-18"
+    },
+    "微積分/逆像と集合演算": {
+      "understanding": 40,
+      "attempts": 0,
+      "correct": 0,
+      "weakPoints": ["逆像と逆写像の混同", "集合演算との対応の理解が浅い"],
+      "lastPracticed": "2026-05-18"
     }
   },
   "overallStats": {
-    "totalSessions": 1,
-    "totalProblems": 8,
-    "totalCorrect": 6
+    "totalSessions": 2,
+    "totalProblems": 12,
+    "totalCorrect": 8
   }
 }
