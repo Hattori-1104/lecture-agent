@@ -2,8 +2,9 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 import Layout from '../layouts/Layout.astro';
-import TopicCard from '../components/TopicCard.astro';
-import SessionHistory from '../components/SessionHistory.astro';
+import { TopicCard } from '../components/TopicCard';
+import { SessionHistory } from '../components/SessionHistory';
+import { Card, CardContent } from '../components/ui/card';
 
 // data/ ディレクトリはリポジトリルートにある
 const dataDir = resolve(process.cwd(), '..', 'data');
@@ -78,27 +79,35 @@ const lastUpdated = progress.lastUpdated
 
     <!-- 全体統計 -->
     <div class="grid grid-cols-3 gap-4 mb-12">
-      <div class="bg-card rounded-2xl p-5 border border-border shadow-sm text-center">
-        <div class="text-4xl font-bold text-primary">{overallStats.totalSessions}</div>
-        <div class="text-sm text-muted-foreground mt-1">セッション数</div>
-      </div>
-      <div class="bg-card rounded-2xl p-5 border border-border shadow-sm text-center">
-        <div class="text-4xl font-bold text-primary">{overallStats.totalProblems}</div>
-        <div class="text-sm text-muted-foreground mt-1">解いた問題数</div>
-      </div>
-      <div class="bg-card rounded-2xl p-5 border border-border shadow-sm text-center">
-        <div class="text-4xl font-bold text-primary">
-          {overallAccuracy !== null ? `${overallAccuracy}%` : '—'}
-        </div>
-        <div class="text-sm text-muted-foreground mt-1">全体正解率</div>
-      </div>
+      <Card size="sm">
+        <CardContent className="text-center">
+          <div class="text-4xl font-bold text-primary">{overallStats.totalSessions}</div>
+          <div class="text-sm text-muted-foreground mt-1">セッション数</div>
+        </CardContent>
+      </Card>
+      <Card size="sm">
+        <CardContent className="text-center">
+          <div class="text-4xl font-bold text-primary">{overallStats.totalProblems}</div>
+          <div class="text-sm text-muted-foreground mt-1">解いた問題数</div>
+        </CardContent>
+      </Card>
+      <Card size="sm">
+        <CardContent className="text-center">
+          <div class="text-4xl font-bold text-primary">
+            {overallAccuracy !== null ? `${overallAccuracy}%` : '—'}
+          </div>
+          <div class="text-sm text-muted-foreground mt-1">全体正解率</div>
+        </CardContent>
+      </Card>
     </div>
 
     <!-- トピック別 -->
     {topicEntries.length === 0 ? (
-      <div class="bg-card rounded-2xl p-8 border border-border text-center mb-12">
-        <p class="text-muted-foreground">学習を始めると、トピックごとの進捗がここに表示されます。</p>
-      </div>
+      <Card className="p-8 text-center mb-12">
+        <CardContent>
+          <p class="text-muted-foreground">学習を始めると、トピックごとの進捗がここに表示されます。</p>
+        </CardContent>
+      </Card>
     ) : (
       <div class="mb-12">
         <h2 class="text-xl font-semibold text-foreground mb-5">トピック別 理解度</h2>
