@@ -1,20 +1,20 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-05-18T05:13:16Z",
+  "lastUpdated": "2026-05-18T06:11:00Z",
   "topics": {
     "微積分/論理・命題": {
-      "understanding": 70,
-      "attempts": 2,
-      "correct": 1,
+      "understanding": 76,
+      "attempts": 3,
+      "correct": 2,
       "weakPoints": ["命題の否定で量化子の反転を忘れる"],
-      "lastPracticed": "2026-05-12"
+      "lastPracticed": "2026-05-18"
     },
     "微積分/ε-N論法": {
-      "understanding": 60,
-      "attempts": 1,
-      "correct": 0,
-      "weakPoints": ["n≥N（N以降）の条件を抜かしやすい"],
-      "lastPracticed": "2026-05-12"
+      "understanding": 68,
+      "attempts": 2,
+      "correct": 1,
+      "weakPoints": ["n≥N（N以降）の条件を抜かしやすい", "⟺と⟹の使い分け"],
+      "lastPracticed": "2026-05-18"
     },
     "微積分/微分・極値": {
       "understanding": 80,
@@ -24,34 +24,53 @@
       "lastPracticed": "2026-05-12"
     },
     "微積分/実数の連続性": {
-      "understanding": 55,
+      "understanding": 61,
+      "attempts": 1,
+      "correct": 1,
+      "weakPoints": ["上界と上限を混同しやすい", "sup証明で任意の上界に対する根拠付けが不十分"],
+      "lastPracticed": "2026-05-18"
+    },
+    "微積分/冪関数・指数関数": {
+      "understanding": 60,
       "attempts": 0,
       "correct": 0,
-      "weakPoints": ["上界と上限を混同しやすい"],
+      "weakPoints": [],
+      "lastPracticed": "2026-05-18"
+    },
+    "微積分/対数関数": {
+      "understanding": 60,
+      "attempts": 0,
+      "correct": 0,
+      "weakPoints": [],
       "lastPracticed": "2026-05-18"
     },
     "微積分/写像": {
-      "understanding": 71,
-      "attempts": 7,
-      "correct": 5,
+      "understanding": 73,
+      "attempts": 10,
+      "correct": 8,
       "weakPoints": [
         "単射・全射の証明を定義に沿って記述する習慣",
         "証明での計算ステップの省略",
-        "逆像の概念の直感的理解"
+        "逆像の概念の直感的理解",
+        "問題文の定数の写し間違い"
       ],
       "lastPracticed": "2026-05-18"
     },
     "微積分/逆像と集合演算": {
-      "understanding": 40,
-      "attempts": 0,
-      "correct": 0,
-      "weakPoints": ["逆像と逆写像の混同", "集合演算との対応の理解が浅い"],
+      "understanding": 56,
+      "attempts": 1,
+      "correct": 1,
+      "weakPoints": [
+        "逆像と逆写像の混同",
+        "集合演算との対応の理解が浅い",
+        "一般証明と具体計算の使い分けの判断"
+      ],
       "lastPracticed": "2026-05-18"
     }
   },
   "overallStats": {
-    "totalSessions": 2,
-    "totalProblems": 12,
-    "totalCorrect": 8
+    "totalSessions": 3,
+    "totalProblems": 19,
+    "totalCorrect": 15
   }
 }
