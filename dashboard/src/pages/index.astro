@@ -70,41 +70,41 @@ const lastUpdated = progress.lastUpdated
 
     <!-- ヘッダー -->
     <div class="mb-10">
-      <h1 class="text-3xl font-bold text-white mb-1">大学数学 学習ダッシュボード</h1>
+      <h1 class="text-3xl font-bold text-foreground mb-1">大学数学 学習ダッシュボード</h1>
       {lastUpdated && (
-        <p class="text-sm text-gray-500">最終更新: {lastUpdated}</p>
+        <p class="text-sm text-muted-foreground">最終更新: {lastUpdated}</p>
       )}
     </div>
 
     <!-- 全体統計 -->
     <div class="grid grid-cols-3 gap-4 mb-12">
-      <div class="bg-gray-800 rounded-2xl p-5 border border-gray-700 text-center">
-        <div class="text-4xl font-bold text-blue-400">{overallStats.totalSessions}</div>
-        <div class="text-sm text-gray-400 mt-1">セッション数</div>
+      <div class="bg-card rounded-2xl p-5 border border-border shadow-sm text-center">
+        <div class="text-4xl font-bold text-primary">{overallStats.totalSessions}</div>
+        <div class="text-sm text-muted-foreground mt-1">セッション数</div>
       </div>
-      <div class="bg-gray-800 rounded-2xl p-5 border border-gray-700 text-center">
-        <div class="text-4xl font-bold text-blue-400">{overallStats.totalProblems}</div>
-        <div class="text-sm text-gray-400 mt-1">解いた問題数</div>
+      <div class="bg-card rounded-2xl p-5 border border-border shadow-sm text-center">
+        <div class="text-4xl font-bold text-primary">{overallStats.totalProblems}</div>
+        <div class="text-sm text-muted-foreground mt-1">解いた問題数</div>
       </div>
-      <div class="bg-gray-800 rounded-2xl p-5 border border-gray-700 text-center">
-        <div class="text-4xl font-bold text-blue-400">
+      <div class="bg-card rounded-2xl p-5 border border-border shadow-sm text-center">
+        <div class="text-4xl font-bold text-primary">
           {overallAccuracy !== null ? `${overallAccuracy}%` : '—'}
         </div>
-        <div class="text-sm text-gray-400 mt-1">全体正解率</div>
+        <div class="text-sm text-muted-foreground mt-1">全体正解率</div>
       </div>
     </div>
 
     <!-- トピック別 -->
     {topicEntries.length === 0 ? (
-      <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700 text-center mb-12">
-        <p class="text-gray-500">学習を始めると、トピックごとの進捗がここに表示されます。</p>
+      <div class="bg-card rounded-2xl p-8 border border-border text-center mb-12">
+        <p class="text-muted-foreground">学習を始めると、トピックごとの進捗がここに表示されます。</p>
       </div>
     ) : (
       <div class="mb-12">
-        <h2 class="text-xl font-semibold text-white mb-5">トピック別 理解度</h2>
+        <h2 class="text-xl font-semibold text-foreground mb-5">トピック別 理解度</h2>
         {Object.entries(grouped).map(([category, entries]) => (
           <div class="mb-8">
-            <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">{category}</h3>
+            <h3 class="text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3">{category}</h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {entries.map(([name, data]) => (
                 <TopicCard
@@ -124,7 +124,7 @@ const lastUpdated = progress.lastUpdated
 
     <!-- セッション履歴 -->
     <div>
-      <h2 class="text-xl font-semibold text-white mb-5">セッション履歴</h2>
+      <h2 class="text-xl font-semibold text-foreground mb-5">セッション履歴</h2>
       <SessionHistory sessions={sessions} />
     </div>
 

@@ -12,12 +12,12 @@ const color =
 ---
 
 <div class="w-full">
-  {label && <span class="text-xs text-gray-400 mb-1 block">{label}</span>}
-  <div class="w-full bg-gray-700 rounded-full h-2.5">
+  {label && <span class="text-xs text-muted-foreground mb-1 block">{label}</span>}
+  <div class="w-full bg-muted rounded-full h-2.5">
     <div
       class={`h-2.5 rounded-full transition-all ${color}`}
       style={`width: ${clamped}%`}
     ></div>
   </div>
-  <span class="text-xs text-gray-400 mt-1 block text-right">{clamped}%</span>
+  <span class="text-xs text-muted-foreground mt-1 block text-right">{clamped}%</span>
 </div>
